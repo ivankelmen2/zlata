@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Magicus</title>
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <link rel="stylesheet"  href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+	$(".button").click(function(){
+		$(".screen1").addClass("none");
+    $(".screen2").removeClass("none");
+	});
+});
+$(document).ready(function(){
+$(".dote1").click(function(){
+$(".bubble1").toggleClass("none");
+
+});
+$(".dote2").click(function(){
+$(".bubble2").toggleClass("none");
+});
+$(".dote3").click(function(){
+$(".bubble3").toggleClass("none");
+});
+$(".dote4").click(function(){
+$(".bubble4").toggleClass("none");
+});
+$(".dote5").click(function(){
+$(".bubble5").toggleClass("none");
+});
+$(".dote6").click(function(){
+$(".bubble6").toggleClass("none");
+});
+$(".dote7").click(function(){
+$(".bubble7").toggleClass("none");
+});
+$(".dote8").click(function(){
+$(".bubble8").toggleClass("none");
+});
+$(".dote9").click(function(){
+$(".bubble9").toggleClass("none");
+});
+$(".dote10").click(function(){
+$(".bubble10").toggleClass("none");
+});
+$(".dote11").click(function(){
+$(".bubble11").toggleClass("none");
+});
+$(".dote12").click(function(){
+$(".bubble12").toggleClass("none");
+});
+$(".dote13").click(function(){
+$(".bubble13").toggleClass("none");
+});
+$(function() {
+	$(".obj3").draggable();
+});
+$(function() {
+	$(".obj4").draggable();
+});
+$(function() {
+	$(".obj5").draggable();
+});
+$(function() {
+	$(".obj7").draggable();
+});
+$(function() {
+	$(".obj8").draggable();
+});
+$(function() {
+	$(".obj9").draggable();
+});
+$(function() {
+	$(".obj10").draggable();
+});
+$(function() {
+	$(".obj11").draggable();
+});
+$(function() {
+	$(".obj12").draggable();
+});
+$(function() {
+	$(".obj13").draggable();
+});
+$(function() {
+	$(".palka").draggable();
+});
+// $(document).mousemove(function(e) {
+//   $('#cursor').css({
+//     left:e.pageX - 10,
+//     top:e.pageY - 10
+//   });
+//     });
+// let cnt = 0;
+let kotel_pos = $('.kotel').position();
+let kotel_left = kotel_pos.left;
+let kotel_top = kotel_pos.top;
+let kotel_width = kotel_pos.left + $('.kotel').width();
+let kotel_height = kotel_pos.top + $('.kotel').height();
+
+let kotel_width = $('.kotel').width();
+let kotel_height = $('.kotel').height();
+
+
+
+$("#draggable, #draggable1, #draggable2").draggable();
+
+    $("#droppable").droppable({
+      accept: "#draggable, #draggable1, #draggable2",
+      classes: {
+        "ui-droppable-active": "ui-state-default"
+      },
+      drop: function( event, ui ) {
+        // cnt += 1;
+
+
+                let obj1_x = ($('.obj1').position().left);
+                let obj1_y = ($('.obj1').position().top);
+                let obj1_gor = (kotel_left < obj1_x) && (kotel_right > obj1_x);
+                let obj1_ver = (kotel_top < obj1_y) && (kotel_bottom > obj1_y);
+
+                let obj2_x = ($('.obj2').position().left);
+                let obj2_y = ($('.obj2').position().top);
+                let obj2_gor = (kotel_left < obj2_x) && (kotel_right > obj2_x);
+                let obj2_ver = (kotel_top < obj2_y) && (kotel_bottom > obj2_y);
+                console.log(kotel_top, kotel_left, kotel_right, kotel_bottom, obj2_x, obj2_y, obj2_gor, obj2_ver)
+
+        if (obj1_gor && obj1_ver) {
+          // .find("obj2")
+          // $(this).html("kotel")
+          // $(".pena").toggleClass("none")
+          $(".pena").css("fill", '#90C4D9');
+        }
+        if (obj2_ver) {
+          $(".pena").css("fill", '#000000');
+
+        }
+        // else if ($(this).find(".obj6")){
+        //   // $(this).html("kotel")
+        //   // $(".pena").toggleClass("none")
+        //   $(".pena").css("fill", '#000000');
+        // }
+        // drop: function( event, ui ) {
+        //     // cnt += 1;
+        //     if ($(this).find("obj2")) {
+        //       // .find("obj2")
+        //       $( this ).html("kotel")
+        //       // $(".pena").toggleClass("none")
+        //       $(".pena").css("fill", '#EEB1D2')
+        //       }
+        // if ($( this )
+        //   .find("obj1")
+        //   .find("obj6")) {
+        //
+        //   // .find("obj2")
+        //   $( this ).html("kotel")
+        //   $(".pena").toggleClass("none")
+        //   $(".pena1").toggleClass("none")
+        //   // $(".pena2").toggleClass("none")
+        //   $(".boble").toggleClass("none"); }
+        //   else if ($( this ).find("obj2")) {
+        //     $( this ).html("kotel")
+        //     $(".pena").toggleClass("none")
+        //     // $(".pena1").toggleClass("none")
+        //     $(".pena2").toggleClass("none")
+        //     $(".boble").toggleClass("none");
+        //   }
+      },
+  });
+});
+    </script>
+</head>
+ <body>
+   <div id="cursor"></div>
+    <div class="screen1">
+     <img class="back" src="images/back.svg" alt=""></img>
+       <img class="title" src="images/title.png" alt=""></img>
+       <img class="title2" src="images/title2.png" alt=""></img>
+     <div class="container">
+     <h3>СЧАСТЬЕ</h3>
+     <h4>ЛЮБОВЬ</h4>
+     <h5>МУДРОСТЬ</h5>
+   </div>
+     <img class="characters" src="images/character1.png" alt=""></img>
+    <img class="button1" src="images/button1.png" alt=""></img>
+    <img class="button" src="images/button.png" alt=""></img>
+  </div>
+      <div class="screen2 none" >
+      <img class="titlescreen2" src="images/titlescreen2.png" alt=""></img>
+      <img id="droppable" class="kotel" src="images/kotel.png" alt=""></img>
+      <img class="palka" src="images/palka.png" alt=""></img>
+      <!-- <img class="pena1 none" src="images/pena1.png" alt=""></img>
+        <img class="pena2 none" src="images/pena2.png" alt=""></img> -->
+      <!-- <img class="pena" src="images/pena.svg" alt=""></img> -->
+      <svg width="523" height="182" viewBox="0 0 523 182"  xmlns="http://www.w3.org/2000/svg">
+        <path class="pena" d="M136.868 150.868C136.872 163.202 129.971 181.142 101.362 181.142C74.626 181.142 61.3426 157.708 61.7684 145.992C57.7948 159.271 39.2041 175.177 10.0408 145.992C-11.8848 124.049 5.95421 107.57 26.7446 109.416C16.101 106.575 -8.70793 92.9959 5.35769 73.9871C18.2836 56.5186 34.1662 68.6613 46.2288 80.5911C42.3972 73.419 31.9404 47.1724 52.8278 34.3633C71.9339 22.6466 91.1634 39.9973 101.163 56.5186C98.7502 45.654 97.7014 24.2259 116.902 22.6466C128.25 21.7131 134.076 40.9463 136.031 53.2182C134.838 40.0018 139.743 18.6426 157.89 18.1729C175.848 17.7082 183.694 39.0386 187.424 52.6842C184.638 38.3917 189.519 15.8225 206.156 14.4221C224.378 12.8883 230.504 41.6064 235.684 56.5186C234.406 45.2279 238.216 18.1729 251.153 18.1729C271.467 18.1729 270.216 34.3167 270.655 48.0019C271.388 41.272 275.74 34.3633 288.901 34.3633C303.679 34.3633 311.201 49.9407 314.378 63.1523C314.269 55.9943 316.622 48.9663 325.302 48.6364C335.672 48.2423 342.071 56.5989 345.239 63.7347C342.11 53.5634 339.694 39.671 346.589 37.5588C366.299 31.5206 369.508 49.1335 375.752 56.5186C368.373 44.5178 358.042 18.3433 375.752 9.65166C393.463 0.959983 401.723 17.3918 403.638 26.6942C404.064 18.457 409.471 1.59907 427.693 0.0652465C445.915 -1.46858 455.579 24.4218 458.133 37.5588C457.069 31.0968 458.304 18.1729 471.757 18.1729C485.21 18.1729 488.574 38.4819 488.574 48.6364C489.922 39.9731 495.343 22.6466 506.242 22.6466C519.866 22.6466 531.041 73.3084 515.35 80.9562C505.133 85.9363 532.288 113.454 506.242 130.44C493.222 138.932 475.286 131.931 474.913 124.871C474.413 132.112 469.133 145.957 451.109 149.4C432.376 152.979 427.693 138.252 427.693 130.44C426.345 137.399 419.646 151.701 403.638 153.235C387.631 154.769 373.269 134.417 368.089 124.049C368.018 131.364 354.907 144.99 337.878 144.99C320.848 144.99 313.098 131.364 306.995 124.049C304.796 135.056 291.967 156.302 275.959 153.235C259.951 150.167 249.165 132.5 243.56 124.049C245.901 135.34 245.263 158.688 223.976 161.756C202.689 164.824 191.407 142.157 188.426 130.44C190.981 144.642 190.129 173.473 166.288 175.177C145.779 176.643 138.502 161.715 136.868 150.868Z" fill="#EEEEEC"/>
+      </svg>
+
+      <img class="boble none" src="images/boble.png" alt=""></img>
+      <img  id="draggable" class="obj1" src="images/obj1.png" alt=""></img>
+      <img id="draggable2" class="obj2"  src="images/obj2.png" alt=""></img>
+      <img class="obj3"  src="images/obj3.png" alt=""></img>
+      <img class="obj4"  src="images/obj4.png" alt=""></img>
+      <img id="draggable3" class="obj5"  src="images/obj5.png" alt=""></img>
+      <img id="draggable1" class="obj6"  src="images/obj6.png" alt=""></img>
+      <img class="obj7"  src="images/obj7.png" alt=""></img>
+      <img class="obj8"  src="images/obj8.png" alt=""></img>
+      <img class="obj9"  src="images/obj9.png" alt=""></img>
+      <img class="obj10"  src="images/obj10.png" alt=""></img>
+      <img class="obj11"  src="images/obj11.png" alt=""></img>
+      <img class="obj12" src="images/obj12.png" alt=""></img>
+      <img class="obj13"  src="images/obj13.png" alt=""></img>
+      <img class="bubble1 none" src="images/bubble1.png" alt=""></img>
+      <img class="dote1" src="images/dote1.png" alt=""></img>
+      <img class="bubble2 none" src="images/bubble2.png" alt=""></img>
+      <img class="dote2" src="images/dote2.png" alt=""></img>
+      <img class="bubble3 none" src="images/bubble3.png" alt=""></img>
+      <img class="dote3" src="images/dote3.png" alt=""></img>
+      <img class="bubble4 none" src="images/bubble4.png" alt=""></img>
+      <img class="dote4" src="images/dote4.png" alt=""></img>
+      <img class="bubble5 none" src="images/bubble5.png" alt=""></img>
+      <img class="dote5" src="images/dote2.png" alt=""></img>
+      <img class="bubble6 none" src="images/bubble6.png" alt=""></img>
+      <img class="dote6" src="images/dote6.png" alt=""></img>
+      <img class="bubble7 none" src="images/bubble7.png" alt=""></img>
+      <img class="dote7" src="images/dote7.png" alt=""></img>
+      <img class="bubble8 none" src="images/bubble8.png" alt=""></img>
+      <img class="dote8" src="images/dote3.png" alt=""></img>
+      <img class="bubble9 none" src="images/bubble9.png" alt=""></img>
+      <img class="dote9" src="images/dote9.png" alt=""></img>
+      <img class="bubble10 none" src="images/bubble10.png" alt=""></img>
+      <img class="dote10" src="images/dote1.png" alt=""></img>
+      <img class="bubble11 none" src="images/bubble11.png" alt=""></img>
+      <img class="dote11" src="images/dote11.png" alt=""></img>
+      <img class="bubble12 none" src="images/bubble12.png" alt=""></img>
+      <img class="dote12" src="images/dote3.png" alt=""></img>
+      <img class="bubble13 none" src="images/bubble13.png" alt=""></img>
+      <img class="dote13" src="images/dote2.png" alt=""></img>
+    </div>
+ </body>
